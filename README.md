@@ -1,4 +1,4 @@
-# Intelligent A/B Testing Framework 🚧
+# 🚧 Intelligent A/B Testing Framework
 
 An end-to-end experimentation framework that automates hypothesis generation, power analysis, statistical testing (frequentist & Bayesian), and executive narrative creation using Claude. Includes SRM detection, novelty effect checks, and segmented drill-down analysis.
 
