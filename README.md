@@ -1,10 +1,10 @@
-# Intelligent A/B Testing Framework
+# 🚧 Intelligent A/B Testing Framework
 
 An end-to-end experimentation framework that automates hypothesis generation, power analysis, statistical testing (frequentist & Bayesian), and executive narrative creation using Claude. Includes SRM detection, novelty effect checks, and segmented drill-down analysis.
 
 ## Tech Stack
 
-- **Data Generation**: PySpark, NumPy
+- **Data Generation**: Pandas, NumPy, PyArrow
 - **Statistics Engine**: SciPy, StatsModels, NumPy
 - **AI Integration**: Anthropic Claude API
 - **Dashboard**: Gradio, Plotly, Matplotlib
@@ -16,7 +16,7 @@ An end-to-end experimentation framework that automates hypothesis generation, po
 ab-testing-framework/
 ├── src/
 │   ├── data_generation/
-│   │   └── generate_datasets.py      # PySpark synthetic data generator (1M rows x 3 datasets)
+│   │   └── generate_datasets.py      # Pandas/NumPy synthetic data generator (1M rows x 3 datasets)
 │   ├── stats/
 │   │   ├── power_analysis.py          # Sample size calculator
 │   │   ├── frequentist.py             # Z-test, Welch's t-test, log-rank test
@@ -56,11 +56,11 @@ The framework ships with 3 synthetic experiments, each designed to demonstrate a
 
 | Phase | Name | Description | Status |
 |-------|------|-------------|--------|
-| 1 | Data Foundation | PySpark generation of 3 synthetic datasets (1M rows each) with seeded statistical properties | Not Started |
+| 1 | Data Foundation | Pandas/NumPy generation of 3 synthetic datasets (1M rows each) with seeded statistical properties | Done |
 | 2 | Core Stats Engine | Power analysis, frequentist testing, Bayesian analysis, SRM detection, novelty checks, segmentation | Not Started |
 | 3 | Claude Integration | AI-powered hypothesis generation, executive summaries, segment insights, ship/iterate/kill recommendations | Not Started |
 | 4 | Gradio Dashboard | Interactive 5-tab UI with visualizations, drill-downs, and Claude-generated narratives | Not Started |
-| 5 | Polish & Packaging | README, architecture diagram, tests, setup instructions | Not Started |
+| 5 | Polish & Packaging | README, architecture diagram, tests, setup instructions | In Progress |
 
 ## Setup
 
@@ -86,11 +86,11 @@ The framework ships with 3 synthetic experiments, each designed to demonstrate a
 4. Generate the datasets:
 
    ```bash
-   python src/data_generation/generate_datasets.py
+   python3 -m src.data_generation.generate_datasets
    ```
 
 5. Launch the dashboard:
 
    ```bash
-   python src/ui/app.py
+   python3 src/ui/app.py
    ```
